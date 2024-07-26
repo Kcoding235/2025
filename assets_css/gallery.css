@@ -1,0 +1,92 @@
+.gallerie-container{
+    position: relative;
+    padding-top: 100px;
+    min-height: 100vh;
+    background-color: var(--color-rose-poudre);
+}
+
+.gallerie-container h1{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    text-transform: capitalize;
+    font-family: Verdana;
+    color: #444;
+}
+
+.gallerie-container .image-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10%;
+    gap: 15px;
+    padding: 15px;
+}
+
+.gallerie-container .image-container .image{
+    height: 350px;
+    width: 350px;
+    cursor: pointer;
+    border: 10px solid #fff;
+    box-shadow: 0 5px 15px #444;
+    overflow: hidden;
+}
+
+.image-container .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(-40deg);
+    transition: .2s linear;
+    filter: saturate(0);
+}
+
+
+.image-container .image img:hover{
+    transform: scale(1.1);
+    filter: saturate(1);
+}
+
+
+.gallerie-container .popup-image{
+    position:fixed;
+    top:0;
+    left: 0;
+    background: #444;
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+    display: none;
+}
+
+.gallerie-container .popup-image span{
+   position: absolute;
+   font-size: 50px;
+   font-size: 50px;
+   right: 20px;
+   color: #fff;
+   cursor: pointer;
+}
+
+.gallerie-container .popup-image img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 800px;
+    object-fit: cover;
+}
+
+@media (max-width:768px) {
+    .gallerie-container h1{
+        font-size: 33px;
+    }
+
+    .gallerie-container .popup-image img{
+        width: 95%;
+    }
+}
